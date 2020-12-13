@@ -36,3 +36,30 @@
     transform: rotate(360deg);
   }
 }
+
+Link a {
+  display: flex;
+   justify-content: space-between;
+}
+.us{
+  display: inline;
+  font-size: large;
+  background-color: #61dafb;
+}
+h1{
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: green;
+
+}
+.forms{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  
+
+}
+.forms button{
+  background: green;
+}
