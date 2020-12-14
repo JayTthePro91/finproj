@@ -157,3 +157,16 @@ h1 {
   color: #40b48e;
   font-size: 1.3rem;
 }
+
+.forms{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  
+}
+
+.forms button{
+  background: green;
+}
+
