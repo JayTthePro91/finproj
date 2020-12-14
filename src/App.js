@@ -1,7 +1,12 @@
+
 import React,{useState} from 'react';
 //import logo from './logo.svg';
 import Axios from 'axios';
 import './App.css';
+
+ 
+ import './App.css';
+
 
 const App = () =>{
 //   function App(){
@@ -32,14 +37,37 @@ const App = () =>{
   }
   
   return (
+
     <div className = "App">
     <h1> Welcome to our food site </h1>
     <form className = 'forms' onSubmit = {onSubmit}>
      <input type="text" placeholder="Search Food" autoComplete = "off" onChange={onChange} ></input>
      <button type="submit">Submit</button>
     </form>
+
+    // <form>
+    //   <input type ='text' placeholder='Search Food'></input>
+    //   {/* <input type="Submit"> Submit</input> */}
+    //   <button type="submit">Submit</button>
+    // </form>
+    <div>
+        <h1> Welcome to Our Food site </h1>
+        <form  className = 'forms'>
+          <input type="text" placeholder="Search Food" ></input>
+          <button type="submit">Submit</button>
+      </form>
+
     </div>
-  );
+    
+
+   );
 }
 
 export default App;
+
+
+
+
+
+
+
