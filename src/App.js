@@ -12,8 +12,8 @@ import Alert from './components/thealert';
     
 
    const[thequery, thesetquery] = useState("");
-   const[recipes, setRecipes] = useState([]);
-   const[alert, setAlert] = useState("");
+   const[therecipes, setRecipes] = useState([]);
+   const[thealert, settingAlert] = useState("");
 
    const The_App_Id = "30c41784";
 
@@ -26,20 +26,20 @@ import Alert from './components/thealert';
     if(thequery !==""){
 
     const thesolution = await Axios.get(url);
-    
+    //here the problem starts 
     if(!thesolution.data.more){
-      return setAlert("No food with such name");
+      return settingAlert("No food with such name");
     }
     setRecipes(thesolution.data.hits)
     
     console.log(thesolution);
-    setAlert("");
+    settingAlert("");
     thesetquery("");
     }else{
-      setAlert('Please fill the form');
+      settingAlert('Please fill the form');
     }
   };
-
+//the problem ends
   const onChange = (j) =>{
     thesetquery(j.target.value)
   }
@@ -55,13 +55,13 @@ import Alert from './components/thealert';
     <div className = "App">
     <h1> Welcome to our food site </h1>
     <form className = 'forms' onSubmit = {onSubmit}>
-     {alert !== "" && <Alert alert = {alert}/>}
+     {thealert !== "" && <Alert alert = {thealert}/>}
 
      <input type="text" placeholder="Search Food" autoComplete = "off" onChange={onChange} value={thequery}/>
      <button type="submit">Submit</button>
     </form>
     <div className = "recipes">
-    {recipes !== [] && recipes.map(recipe => <Recipe key = {uuidv4()} recipe= {recipe}/>)}
+    {therecipes !== [] && therecipes.map(recipe => <Recipe key = {uuidv4()} recipe= {recipe}/>)}
 
     </div>
     </div>
