@@ -3,15 +3,20 @@ import React,{useState} from 'react';
 //import logo from './logo.svg';
 import Axios from 'axios';
 import './App.css';
+import Recipe from './components/therecipe';
+import {v4 as uuidv4} from 'uuid';
+import Alert from './components/thealert';
 
- 
- import './App.css';
+
+//const App = () =>{
+   function App(){
+   
 
 
-const App = () =>{
-//   function App(){
 
-   const[thequery, thesetquery] = useState("")
+   const[thequery, thesetquery] = useState("");
+   const[therecipes, setRecipes] = useState([]);
+   const[thealert, settingAlert] = useState("");
 
    const The_App_Id = "30c41784";
 
@@ -20,12 +25,24 @@ const App = () =>{
   const url = `https://api.edamam.com/search?q=${thequery}&app_id=${The_App_Id}&app_key=${The_App_Key}`
 
   const getData = async () =>{
+
+    if(thequery !==""){
+
     const thesolution = await Axios.get(url);
-
+    //here the problem starts 
+    if(!thesolution.data.more){
+      return settingAlert("No food with such name");
+    }
+    setRecipes(thesolution.data.hits)
+    
     console.log(thesolution);
-
-  }
-
+    settingAlert("");
+    thesetquery("");
+    }else{
+      settingAlert('Please fill the form');
+    }
+  };
+//the problem ends
   const onChange = (j) =>{
     thesetquery(j.target.value)
   }
@@ -33,35 +50,30 @@ const App = () =>{
 
   const onSubmit = (j) => {
    j.preventDefault();
+   
    getData();
-  }
+  };
   
   return (
 
     <div className = "App">
     <h1> Welcome to our food site </h1>
     <form className = 'forms' onSubmit = {onSubmit}>
-     <input type="text" placeholder="Search Food" autoComplete = "off" onChange={onChange} ></input>
+     {thealert !== "" && <Alert alert = {thealert}/>}
+
+     <input type="text" placeholder="Search Food" autoComplete = "off" onChange={onChange} value={thequery}/>
      <button type="submit">Submit</button>
     </form>
 
-    // <form>
-    //   <input type ='text' placeholder='Search Food'></input>
-    //   {/* <input type="Submit"> Submit</input> */}
-    //   <button type="submit">Submit</button>
-    // </form>
-    <div>
-        <h1> Welcome to Our Food site </h1>
-        <form  className = 'forms'>
-          <input type="text" placeholder="Search Food" ></input>
-          <button type="submit">Submit</button>
-      </form>
+    <div className = "recipes">
+    {therecipes !== [] && therecipes.map(recipe => <Recipe key = {uuidv4()} recipe= {recipe}/>)}
 
+    </div>
     </div>
     
 
    );
-}
+};
 
 export default App;
 
