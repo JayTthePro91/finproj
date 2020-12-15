@@ -1,3 +1,4 @@
+
 import React,{useState} from 'react';
 //import logo from './logo.svg';
 import Axios from 'axios';
@@ -6,10 +7,12 @@ import Recipe from './components/therecipe';
 import {v4 as uuidv4} from 'uuid';
 import Alert from './components/thealert';
 
+
 //const App = () =>{
    function App(){
    
-    
+
+
 
    const[thequery, thesetquery] = useState("");
    const[therecipes, setRecipes] = useState([]);
@@ -52,6 +55,7 @@ import Alert from './components/thealert';
   };
   
   return (
+
     <div className = "App">
     <h1> Welcome to our food site </h1>
     <form className = 'forms' onSubmit = {onSubmit}>
@@ -60,12 +64,22 @@ import Alert from './components/thealert';
      <input type="text" placeholder="Search Food" autoComplete = "off" onChange={onChange} value={thequery}/>
      <button type="submit">Submit</button>
     </form>
+
     <div className = "recipes">
     {therecipes !== [] && therecipes.map(recipe => <Recipe key = {uuidv4()} recipe= {recipe}/>)}
 
     </div>
     </div>
-  );
-}
+    
+
+   );
+};
 
 export default App;
+
+
+
+
+
+
+
