@@ -11,7 +11,7 @@ return(
    <img src={image} alt={label}/>
    <a href = {url} target = "_blank" rel="noopener
    noreferrer">
-       URL
+       Click here for more information
    </a>
 <button onClick={() => settingShow(!theshow)}> Ingredients</button>
     {theshow && <RecipeDetails ingredients={ingredients}/>}

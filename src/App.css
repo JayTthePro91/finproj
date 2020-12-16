@@ -23,8 +23,8 @@ h1 {
   font-size: 8rem;
   letter-spacing: 0.1rem;
   font-style: normal;
-  color: #40b48e;
-  text-shadow: 0 0.2rem 5rem rgb(119, 115, 115);
+  color: #b4b240;
+  text-shadow: 0 0.2rem 5rem rgb(163, 6, 6);
   text-transform: lowercase;
   margin: 4rem 0;
 }
@@ -46,7 +46,7 @@ h1 {
   position: absolute;
   top: -3rem;
   left: 0;
-  background-color: rgb(72, 128, 233);
+  background-color: rgb(225, 39, 231);
   width: calc(100% - 0.4rem);
   border-radius: 0.5rem;
   padding: 0.2rem;
@@ -63,7 +63,7 @@ h1 {
 .search-form input {
   font-size: 1.6rem;
   border: none;
-  border-bottom: 0.1rem solid #ccc;
+  border-bottom: 0.1rem solid rgb(4, 37, 145);
   margin: 0 0.5rem;
   border-radius: 0.5rem;
   height: 3rem;
@@ -72,7 +72,7 @@ h1 {
 .search-form input[type="text"] {
   padding: 0 0.5rem;
   width: 60%;
-  color: #555;
+  color: rgb(197, 102, 102);
 }
 
 .search-form input[type="submit"] {
