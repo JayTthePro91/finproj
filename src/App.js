@@ -31,7 +31,7 @@ import Alert from './components/thealert';
     const thesolution = await Axios.get(url);
     //here the problem starts 
     if(!thesolution.data.more){
-      return settingAlert("No food with such name");
+      return settingAlert("The food does not exist");
     }
     setRecipes(thesolution.data.hits)
     
@@ -39,7 +39,7 @@ import Alert from './components/thealert';
     settingAlert("");
     thesetquery("");
     }else{
-      settingAlert('Please fill the form');
+      settingAlert('Just Please fill the form');
     }
   };
 //the problem ends
