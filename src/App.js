@@ -26,21 +26,21 @@ import Alert from './components/thealert';
 
   const getData = async () =>{
 
-    if(thequery !==""){
+    //if(thequery !==""){
 
     const thesolution = await Axios.get(url);
     //here the problem starts 
-    if(!thesolution.data.more){
-      return settingAlert("The food does not exist");
-    }
+    //if(!thesolution.data.more){
+      //return settingAlert("The food does not exist");
+    //}
     setRecipes(thesolution.data.hits)
     
     console.log(thesolution);
     settingAlert("");
     thesetquery("");
-    }else{
-      settingAlert('Just Please fill the form');
-    }
+    //}else{
+      //settingAlert('Just Please fill the form');
+    //}
   };
 //the problem ends
   const onChange = (j) =>{
