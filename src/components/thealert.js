@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Alert = ({alert}) =>{
+const thealert = ({alert}) =>{
 
 return(
 
@@ -14,4 +14,4 @@ return(
 
 };
 
-export default Alert;
+export default thealert;
