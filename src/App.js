@@ -5,7 +5,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: "",
+      searchTerm :'',
       data: [],
     };
   }
@@ -23,7 +23,8 @@ class App extends React.Component {
     )
       .then((response) => response.json())
       .then((data) => {
-        this.setState({ data: data.hits });
+        this.setState({data: data.hits });
+        console.log(data);
       });
   };
 
@@ -48,6 +49,7 @@ class App extends React.Component {
                 <p>{food.recipe.label}</p>
                 <img src={food.recipe.image} alt='' />
               </li>
+
             );
           })}
         </ul>
